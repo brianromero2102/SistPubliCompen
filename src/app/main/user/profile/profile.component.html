@@ -1,0 +1,68 @@
+<div id="dashboard-analytics" class="page-layout blank">
+    <div class="main-widget">
+    </div>
+    <div class="content">
+        <div class="left mr-lg-32">
+            <div class="pb-24 font-size-18 font-weight-300">
+                DATOS PERSONALES
+            </div>
+            <form>
+                <div fxLayout="column" fxLayoutAlign="start"
+                     fxLayout.gt-sm="row" fxLayoutAlign.gt-sm="start start">
+                    <div class="widget" fxFlex="100" fxFlex.gt-sm="33">
+                        <label>Nombres:</label><br>
+                        <label>{{user?.name}}</label>
+                    </div>
+                    <div class="widget" fxFlex="100" fxFlex.gt-sm="34">
+                        <label>Apellidos:</label><br>
+                        <label>{{user?.lastname ? user.lastname : '-' }}</label>
+                    </div>
+                    <div class="widget" fxFlex="100" fxFlex.gt-sm="33">
+                        <label>Username:</label><br>
+                        <label>{{user?.username}}</label>
+                    </div>
+                </div>
+
+                <br>
+
+                <div fxLayout="column" fxLayoutAlign="start"
+                     fxLayout.gt-sm="row" fxLayoutAlign.gt-sm="start start">
+                    <div class="widget" fxFlex="100" fxFlex.gt-sm="33">
+                        <label>Email:</label><br>
+                        <label>{{user?.email}}</label>
+                    </div>
+                    <div class="widget" fxFlex="100" fxFlex.gt-sm="34">
+                        <label>Tipo de documento:</label><br>
+                        <label>{{user?.doctype}}</label>
+                    </div>
+                    <div class="widget" fxFlex="100" fxFlex.gt-sm="33">
+                        <label>Numero de documento:</label><br>
+                        <label>{{user?.docnumber}}</label>
+                    </div>
+                </div>
+
+                <br>
+
+                <div fxLayout="column" fxLayoutAlign="start"
+                     fxLayout.gt-sm="row" fxLayoutAlign.gt-sm="start start">
+                    <div class="widget" fxFlex="100" fxFlex.gt-sm="33">
+                        <label>Profile:</label><br>
+                        <label>{{user?.profile?.name}}</label>
+                    </div>
+                </div>
+
+                <!--<br>-->
+
+                <div fxLayout="column" fxLayoutAlign="start"
+                     fxLayout.gt-sm="row" fxLayoutAlign.gt-sm="start start">
+                    <div class="widget" fxFlex="100" fxFlex.gt-sm="67">
+
+                    </div>
+                    <div class="widget" fxFlex="100" fxFlex.gt-sm="33">
+                        <button mat-raised-button color="primary">EDITAR PERFIL</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

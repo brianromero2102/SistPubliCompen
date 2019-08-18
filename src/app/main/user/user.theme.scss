@@ -1,0 +1,12 @@
+@mixin app-user-theme($theme) {
+
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+    $accent: map-get($theme, accent);
+    $is-dark: map-get($theme, is-dark);
+
+    app-user {
+
+
+    }
+}

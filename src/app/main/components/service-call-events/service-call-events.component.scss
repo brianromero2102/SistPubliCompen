@@ -1,0 +1,31 @@
+mat-table, table {
+    width: 100%;
+}
+
+.mat-row {
+    cursor: pointer;
+}
+
+.mat-row:hover {
+    background-color: #E9EBEE;
+}
+
+.mat-header-cell {
+    font-weight: bold;
+}
+
+.mat-column-nro {
+    max-width: 5% !important;
+}
+
+.mat-column-tag {
+    max-width: 10%;
+}
+
+.mat-column-servicecode {
+    max-width: 10%;
+}
+
+.source-code{
+    color: #ffffff;
+}

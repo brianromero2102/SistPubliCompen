@@ -1,0 +1,50 @@
+<table mat-table [dataSource]="dataSource"
+       class="table table-striped table-responsive" matSort>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="nro">
+        <th mat-header-cell *matHeaderCellDef> Nro.</th>
+        <td mat-cell *matCellDef="let element;let i = index;">{{i + 1}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name</th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <!-- Lastname Column -->
+    <ng-container matColumnDef="lastname">
+        <th mat-header-cell *matHeaderCellDef> Lastname</th>
+        <td mat-cell *matCellDef="let element"> {{element.lastname}} </td>
+    </ng-container>
+
+    <!-- Username Column -->
+    <ng-container matColumnDef="username">
+        <th mat-header-cell *matHeaderCellDef> Username</th>
+        <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+    </ng-container>
+
+    <!-- email Column -->
+    <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> email</th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+
+    <!-- doctype Column -->
+    <ng-container matColumnDef="doctype">
+        <th mat-header-cell *matHeaderCellDef> doctype</th>
+        <td mat-cell *matCellDef="let element"> {{element.doctype}} </td>
+    </ng-container>
+
+    <!-- docnumber Column -->
+    <ng-container matColumnDef="docnumber">
+        <th mat-header-cell *matHeaderCellDef> docnumber</th>
+        <td mat-cell *matCellDef="let element"> {{element.docnumber}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>
+<mat-paginator [pageSize]="5" showFirstLastButtons></mat-paginator>

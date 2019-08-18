@@ -1,0 +1,66 @@
+<div [hidden]="detail">
+    <app-filter (emitOperation)="serviceCallEvent($event)"></app-filter>
+    <br>
+    <div *ngIf="dataSource && dataSource.data && dataSource.data.length > 0">
+        <table mat-table [dataSource]="dataSource"
+               class="table table-striped table-responsive" matSort>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="nro">
+                <th mat-header-cell *matHeaderCellDef> Nro.</th>
+                <td mat-cell *matCellDef="let element;let i = index;">{{i + 1}}</td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="tag">
+                <th mat-header-cell *matHeaderCellDef> TAG</th>
+                <td mat-cell *matCellDef="let element">{{element.tag}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="servicecode">
+                <th mat-header-cell *matHeaderCellDef> SERVICECODE</th>
+                <td mat-cell *matCellDef="let element">{{element.servicecode}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="datetime_request">
+                <th mat-header-cell *matHeaderCellDef> DREQ</th>
+                <td mat-cell *matCellDef="let element">{{element.datetime_request | date : 'short' }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="datetime_response">
+                <th mat-header-cell *matHeaderCellDef> DRES</th>
+                <td mat-cell *matCellDef="let element">{{element.datetime_response | date : 'short' }}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="eventRow(row)"></tr>
+
+        </table>
+    </div>
+    <mat-paginator [pageSize]="5" showFirstLastButtons></mat-paginator>
+</div>
+<div [hidden]="!detail">
+    <div *ngIf="detailService">
+        <label>UriEndpoint:</label><br>
+        <fuse-highlight class="source-code">
+                <textarea #source>
+                    {{title}}
+                </textarea>
+        </fuse-highlight>
+        <br>
+        <!--<label>Request:</label><br>-->
+        <!--<fuse-highlight lang="bash" class="source-code">-->
+                <!--<textarea #source hidden="hidden">-->
+                    <!--{{detailService.servicerequest}}-->
+                <!--</textarea>-->
+        <!--</fuse-highlight>-->
+        <!--<br>-->
+        <!--<label>Response:</label><br>-->
+        <!--<fuse-highlight lang="bash" class="source-code">-->
+                <!--<textarea #source hidden="hidden">-->
+                    <!--{{detailService.serviceresponse}}-->
+                <!--</textarea>-->
+        <!--</fuse-highlight>-->
+        <!--<br>-->
+    </div>
+</div>

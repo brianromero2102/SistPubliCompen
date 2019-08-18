@@ -1,0 +1,31 @@
+<form [formGroup]="formFilter" (ngSubmit)="sendOperation()">
+
+
+    <table class="filter-div" cellspacing="0">
+        <tr>
+            <td>
+                <mat-form-field class="full-width">
+                    <input matInput [matDatepicker]="picker"
+                           placeholder="Fecha de envío"
+                           formControlName="startDate" disabled>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker disabled="false"></mat-datepicker>
+                </mat-form-field>
+            </td>
+            <td>
+                <mat-form-field class="full-width">
+                    <input matInput [matDatepicker]="picker1"
+                           placeholder="Fecha de envío"
+                           formControlName="endDate" disabled>
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1 disabled="false"></mat-datepicker>
+                </mat-form-field>
+            </td>
+            <td>
+                <button mat-raised-button type="submit" color="primary">Filtrar</button>
+            </td>
+        </tr>
+    </table>
+
+
+</form>

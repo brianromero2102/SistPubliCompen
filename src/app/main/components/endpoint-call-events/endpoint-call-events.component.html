@@ -1,0 +1,41 @@
+<app-filter (emitOperation)="endpointCallEvent($event)"></app-filter>
+
+
+<div *ngIf="dataSource && dataSource.data && dataSource.data.length > 0">
+    <table mat-table [dataSource]="dataSource"
+           class="table table-striped table-responsive" matSort>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="nro">
+            <th mat-header-cell *matHeaderCellDef> Nro.</th>
+            <td mat-cell *matCellDef="let element;let i = index;">{{i + 1}}</td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="tag">
+            <th mat-header-cell *matHeaderCellDef> Tag</th>
+            <td mat-cell *matCellDef="let element">{{element.tag}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="uriendpoint">
+            <th mat-header-cell *matHeaderCellDef> uri_endpoint</th>
+            <td mat-cell *matCellDef="let element">{{element.uriendpoint}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="datetime_request">
+            <th mat-header-cell *matHeaderCellDef> datetime_request </th>
+            <td mat-cell *matCellDef="let element">{{element.datetime_request | date : 'short'}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="datetime_response">
+            <th mat-header-cell *matHeaderCellDef> datetime_response </th>
+            <td mat-cell *matCellDef="let element">{{element.datetime_response | date : 'short'}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+</div>
+<mat-paginator [pageSize]="5" showFirstLastButtons></mat-paginator>
+

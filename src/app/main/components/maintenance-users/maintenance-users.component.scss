@@ -1,0 +1,15 @@
+mat-table, table {
+    width: 100%;
+}
+
+.mat-row {
+    cursor: pointer;
+}
+
+.mat-row:hover {
+    background-color: #E9EBEE;
+}
+
+.mat-header-cell {
+    font-weight: bold;
+}

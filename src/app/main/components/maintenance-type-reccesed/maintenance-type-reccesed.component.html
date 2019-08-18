@@ -1,0 +1,23 @@
+<form class="example-form" [formGroup]="formMaintenance" (ngSubmit)="submitData()">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Titulo" formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Descripcion" formControlName="description"></textarea>
+    </mat-form-field>
+
+    <div class="example-full-width">
+        <input id="input-file-id"
+               formControlName="file"
+               type="file" name="photo"
+               ng2FileSelect
+               [uploader]="uploader"/>
+        <label for="input-file-id">...</label>
+    </div>
+    <br>
+
+    <button mat-raised-button
+            [disabled]="!uploader.getNotUploadedItems().length"
+            color="primary">Procesar archivo</button>
+</form>

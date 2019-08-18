@@ -1,0 +1,31 @@
+<div id="mail-confirm" fxLayout="column">
+
+    <div id="mail-confirm-form-wrapper" fxLayout="column" fxLayoutAlign="center center">
+
+        <div id="mail-confirm-form" [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}">
+
+            <div class="logo">
+                <mat-icon class="mat-accent s-96">email</mat-icon>
+            </div>
+
+            <div class="title">Revisa tu bandeja de entrada!</div>
+
+            <div class="subtitle">
+                <p>
+                    Te mandamos un link al correo <b>{{ email }}</b>.
+                </p>
+                <p>
+                    Entra al link para que puedas cambiar tu contraseña!
+                </p>
+            </div>
+
+            <div class="message">
+                <!--<a class="link" [routerLink]="'/auth/login'">Regresar al login!</a>-->
+                <a class="forgot-password" [routerLink]="'/auth/login'">Regresar al login!</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
